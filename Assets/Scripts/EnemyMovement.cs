@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    
     [Header("References")]
-    [Header("Attributes")]
-
     [SerializeField]
     private Rigidbody2D rb;
 
+    [Header("Attributes")]
+    [SerializeField]
     private float moveSpeed = 2f;
     
     private Transform target;
@@ -28,6 +29,7 @@ public class EnemyMovement : MonoBehaviour
 
         if (pathIndex == LevelManager.main.path.Length)
         {
+            EnemySpawner.onEnemyDestroy.Invoke();
             Destroy(gameObject);
             return;
         }

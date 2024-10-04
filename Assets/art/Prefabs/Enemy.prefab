@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6560841682213348194}
+  moveSpeed: 8
 --- !u!58 &6069030725464314524
 CircleCollider2D:
   m_ObjectHideFlags: 0
