@@ -14,14 +14,17 @@ public class BaseTurret : MonoBehaviour
     [SerializeField] private float targetingRange = 5f;
     [SerializeField] private float rotationSpeed = 200f;
     [SerializeField] private float bps = 1f;
+    [SerializeField] private int TowerDmg = 50;
     [Header("Idle Settings")]
     [SerializeField] private float idleRotationAngle = 0f;
 
+    
     private Transform target;
     private float timeUntilFire;
 
     private void Start()
     {
+        
         
         if (transform.position.x < 0)
         {
@@ -72,6 +75,7 @@ public class BaseTurret : MonoBehaviour
         GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
         Bullet bulletScript = bulletObj.GetComponent<Bullet>();
         bulletScript.SetTarget(target);
+        bulletScript.setDmg(TowerDmg);
     }
 
     private void FindTarget()
