@@ -18,7 +18,6 @@ public class LevelMenu : MonoBehaviour
         }
         for (int i = 0; i < unlockedLevel; i++)
         {
-
             buttons[i].interactable = true;
         }
     }
@@ -28,3 +27,4 @@ public class LevelMenu : MonoBehaviour
         SceneManager.LoadScene(levelName);
     }
 }
+
